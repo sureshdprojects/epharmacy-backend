@@ -32,10 +32,9 @@ public class OrderService {
 			if(order!=null && order.getEmail() != null && order.getOrderProducts()!= null) {
 				
 				//generates custom Id for order
-				if(order.getOrderId() == 0) {
+				
 					long orderSequence = orderRepository.getOrderSequence("orderId");
-					order.setOrderId(orderSequence);
-				}
+					order.setOrderId("EPH"+orderSequence);
 					try {
 						isOrderSaved = orderRepository.saveOrderToUserOrders(order);
 						if(isOrderSaved) {

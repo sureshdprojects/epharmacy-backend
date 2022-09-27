@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Transient;
 
 public class Order {
 
-	private long orderId;
+	private String orderId;
 	private List<Product> orderProducts;
 	private double orderValue;
 	@Transient
@@ -20,13 +20,11 @@ public class Order {
 		this.email = email;
 	}
 
-	
-
-	public long getOrderId() {
+	public String getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(long orderId) {
+	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
 
